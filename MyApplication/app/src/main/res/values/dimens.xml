@@ -3,7 +3,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="grid_cell_size">40dp</dimen>
+    <dimen name="cell_text_size">25dp</dimen>
+    <dimen name="grid_cell_size">30dp</dimen>
 
-    <dimen name="gird_bordor_size">3dp</dimen>
+    <dimen name="gird_border_size">3dp</dimen>
+    <dimen name="cell_border_size">1dp</dimen>
 </resources>
