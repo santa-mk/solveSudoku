@@ -5,15 +5,20 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="white_grid">
-        <item name="android:background">@color/white</item>
-        <item name="android:width">@dimen/grid_size</item>
-        <item name="android:height">@dimen/grid_size</item>
+    <style name="grid_cell">
+        <item name="android:width">@dimen/grid_cell_size</item>
+        <item name="android:height">@dimen/grid_cell_size</item>
     </style>
 
-    <style name="gray_grid" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="white_grid">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="color_grid">
         <item name="android:background">@color/gray</item>
-        <item name="android:width">@dimen/grid_size</item>
-        <item name="android:height">@dimen/grid_size</item>
+    </style>
+
+    <style name="border_frame">
+        <item name="android:background">@color/black</item>
     </style>
 </resources>
