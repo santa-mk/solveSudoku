@@ -5,4 +5,36 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="white_cell">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:width">@dimen/grid_cell_size</item>
+        <item name="android:height">@dimen/grid_cell_size</item>
+        <item name="android:layout_marginRight">@dimen/cell_border_size</item>
+        <item name="android:layout_marginBottom">@dimen/cell_border_size</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">@dimen/cell_text_size</item>
+    </style>
+
+    <style name="gray_cell">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:width">@dimen/grid_cell_size</item>
+        <item name="android:height">@dimen/grid_cell_size</item>
+        <item name="android:layout_marginRight">@dimen/cell_border_size</item>
+        <item name="android:layout_marginBottom">@dimen/cell_border_size</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">@dimen/cell_text_size</item>
+    </style>
+
+    <style name="box_grid">
+    </style>
+
+    <style name="border_frame">
+        <item name="android:background">@color/black</item>
+    </style>
 </resources>

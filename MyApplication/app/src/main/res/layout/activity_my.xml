@@ -1,16 +1,592 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MyActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="@string/hello_world"
+    <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:columnCount="9"
+        android:rowCount="9"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp">
 
-</RelativeLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingTop="@dimen/gird_border_size"
+            android:paddingLeft="@dimen/gird_border_size"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_00"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_01"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_02"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_11"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_10"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_12"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_20"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_21"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_22"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingTop="@dimen/gird_border_size"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_03"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_04"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_05"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_13"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_14"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_15"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_23"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_24"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_25"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingBottom="@dimen/gird_border_size"
+            android:paddingTop="@dimen/gird_border_size"
+            android:paddingRight="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:rowCount="3"
+                android:columnCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_06"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_07"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_08"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_16"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_17"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_18"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_26"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_27"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_28"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingLeft="@dimen/gird_border_size"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_30"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_31"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_32"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_40"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_41"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_42"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_50"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_51"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_52"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="3"
+            android:layout_columnSpan="3"
+            style="@style/border_frame"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:rowCount="3"
+                android:columnCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_33"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_34"
+                    style="@style/white_cell"
+                    android:layout_width="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cell_35"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_43"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_44"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_45"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_53"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_54"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_55"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="3"
+            android:layout_columnSpan="3"
+            style="@style/border_frame"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_36"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_37"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_38"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_46"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_47"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_48"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_56"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_57"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_58"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingLeft="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:rowCount="3"
+                android:columnCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_60"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_61"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_62"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_70"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_71"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_72"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_80"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_81"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_82"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="3"
+            style="@style/border_frame"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_63"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_64"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_65"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_73"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_74"
+                    style="@style/gray_cell" />
+
+                <TextView
+                    android:id="@+id/cell_75"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_83"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_84"
+                    style="@style/gray_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_85"
+                    style="@style/gray_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_rowSpan="3"
+            android:layout_columnSpan="3"
+            style="@style/border_frame"
+            android:paddingRight="@dimen/gird_border_size"
+            android:paddingBottom="@dimen/gird_border_size">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="3"
+                style="@style/box_grid">
+
+                <TextView
+                    android:id="@+id/cell_66"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_67"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_68"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_76"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_77"
+                    style="@style/white_cell" />
+
+                <TextView
+                    android:id="@+id/cell_78"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_86"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_87"
+                    style="@style/white_cell"
+                    android:layout_marginBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/cell_88"
+                    style="@style/white_cell"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </GridLayout>
+
+        </FrameLayout>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solve"
+            android:id="@+id/solve_button"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:id="@+id/clear_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
