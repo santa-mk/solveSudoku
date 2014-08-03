@@ -22,7 +22,7 @@ public class Cell {
             possibility[i] = true;
         }
         orgBgColor = calcOrgBgColor();
-        value = -1;
+        value = 0;
     }
 
     public int getValue() {
@@ -71,7 +71,7 @@ public class Cell {
     }
 
     public void clear() {
-        value = -1;
+        value = 0;
         textView.setText("");
     }
 

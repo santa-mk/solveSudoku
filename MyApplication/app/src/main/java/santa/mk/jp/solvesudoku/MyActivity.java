@@ -3,6 +3,7 @@ package santa.mk.jp.solvesudoku;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,6 +63,7 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View view) {
                 isStartedToSolve = true;
+                printSudokuMap();
             }
         });
 
@@ -273,5 +275,16 @@ public class MyActivity extends Activity {
                 mSelectedCell.getTextView().setBackgroundColor(Color.BLACK);
             }
         });
+    }
+
+    private void printSudokuMap() {
+        for (int i = 0; i < Params.SIZE; i++) {
+            StringBuffer buf = new StringBuffer();
+            for (int j = 0; j < Params.SIZE; j++) {
+                buf.append(mValueMap[i][j].getValue());
+                buf.append(" ");
+            }
+            Log.d(TAG, buf.toString());
+        }
     }
 }
