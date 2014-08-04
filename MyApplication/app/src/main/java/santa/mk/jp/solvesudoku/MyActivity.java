@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class MyActivity extends Activity {
     private static final String TAG = MyActivity.class.getSimpleName();
@@ -286,5 +289,55 @@ public class MyActivity extends Activity {
             }
             Log.d(TAG, buf.toString());
         }
+    }
+
+    private void markColumn(Cell cell) {
+        int row = cell.getRow();
+        int value = cell.getValue();
+        for (int i = 0; i < Params.SIZE; i++) {
+            mValueMap[row][i].losePossibility(value);
+        }
+    }
+
+    private void markRow(Cell cell) {
+        int column = cell.getRow();
+        int value = cell.getValue();
+        for (int i = 0; i < Params.SIZE; i++) {
+            mValueMap[i][column].losePossibility(value);
+        }
+    }
+
+    private void markBox(Cell cell) {
+        int value = cell.getValue();
+        for (Cell sameBoxCell : getSameBoxCells(cell)) {
+            sameBoxCell.losePossibility(value);
+        }
+    }
+
+    private Set<Cell> getSameBoxCells(Cell cell) {
+        int rowGroup = cell.getRow() / 3;
+        int baseRow = rowGroup * 3;
+        int columnGroup = cell.getColumn() / 3;
+        int baseColumn = columnGroup * 3;
+
+        int targetRow = cell.getRow();
+        int targetColumn = cell.getColumn();
+
+        Set<Cell> sameBoxCells = new HashSet<Cell>();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                int row = baseRow + i;
+                int column = baseColumn + j;
+
+                if (row == targetRow && column == targetColumn) {
+                    continue;
+                }
+
+                sameBoxCells.add(mValueMap[row][column]);
+            }
+        }
+
+        return sameBoxCells;
     }
 }
