@@ -3,20 +3,16 @@ package santa.mk.jp.solvesudoku;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.HashSet;
-import java.util.Set;
-
 
 public class MyActivity extends Activity {
     private static final String TAG = MyActivity.class.getSimpleName();
 
-    private Cell[][] mValueMap;
+    private SudokuMap mValueMap;
     private Cell mSelectedCell;
     private boolean isStartedToSolve = false;
 
@@ -49,14 +45,7 @@ public class MyActivity extends Activity {
     }
 
     private void initialize() {
-        mValueMap = new Cell[Params.SIZE][Params.SIZE];
-
-        for (int i = 0; i < Params.SIZE; i++) {
-            for (int j = 0; j < Params.SIZE; j++) {
-                mValueMap[i][j] = new Cell(i, j);
-            }
-        }
-
+        mValueMap = new SudokuMap(Params.SIZE);
         mSelectedCell = null;
 
         setInputListener();
@@ -66,7 +55,7 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View view) {
                 isStartedToSolve = true;
-                printSudokuMap();
+                mValueMap.printSudokuMap();
             }
         });
 
@@ -75,7 +64,7 @@ public class MyActivity extends Activity {
             public void onClick(View view) {
                 for (int i = 0; i < Params.SIZE; i++) {
                     for (int j = 0; j < Params.SIZE; j++) {
-                        mValueMap[i][j].clear();
+                        mValueMap.getCell(i, j).clear();
                     }
                 }
 
@@ -265,7 +254,7 @@ public class MyActivity extends Activity {
 
     private void setCellListener(int id, final int row, final int column) {
         TextView v = (TextView) findViewById(id);
-        mValueMap[row][column].setTextView(v);
+        mValueMap.getCell(row, column).setTextView(v);
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -274,70 +263,11 @@ public class MyActivity extends Activity {
                     mSelectedCell.setOrgBGColorToView();
                 }
 
-                mSelectedCell = mValueMap[row][column];
+                mSelectedCell = mValueMap.getCell(row, column);
                 mSelectedCell.getTextView().setBackgroundColor(Color.BLACK);
             }
         });
     }
 
-    private void printSudokuMap() {
-        for (int i = 0; i < Params.SIZE; i++) {
-            StringBuffer buf = new StringBuffer();
-            for (int j = 0; j < Params.SIZE; j++) {
-                buf.append(mValueMap[i][j].getValue());
-                buf.append(" ");
-            }
-            Log.d(TAG, buf.toString());
-        }
-    }
 
-    private void markColumn(Cell cell) {
-        int row = cell.getRow();
-        int value = cell.getValue();
-        for (int i = 0; i < Params.SIZE; i++) {
-            mValueMap[row][i].losePossibility(value);
-        }
-    }
-
-    private void markRow(Cell cell) {
-        int column = cell.getRow();
-        int value = cell.getValue();
-        for (int i = 0; i < Params.SIZE; i++) {
-            mValueMap[i][column].losePossibility(value);
-        }
-    }
-
-    private void markBox(Cell cell) {
-        int value = cell.getValue();
-        for (Cell sameBoxCell : getSameBoxCells(cell)) {
-            sameBoxCell.losePossibility(value);
-        }
-    }
-
-    private Set<Cell> getSameBoxCells(Cell cell) {
-        int rowGroup = cell.getRow() / 3;
-        int baseRow = rowGroup * 3;
-        int columnGroup = cell.getColumn() / 3;
-        int baseColumn = columnGroup * 3;
-
-        int targetRow = cell.getRow();
-        int targetColumn = cell.getColumn();
-
-        Set<Cell> sameBoxCells = new HashSet<Cell>();
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                int row = baseRow + i;
-                int column = baseColumn + j;
-
-                if (row == targetRow && column == targetColumn) {
-                    continue;
-                }
-
-                sameBoxCells.add(mValueMap[row][column]);
-            }
-        }
-
-        return sameBoxCells;
-    }
 }
