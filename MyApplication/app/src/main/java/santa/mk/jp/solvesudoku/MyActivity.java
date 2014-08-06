@@ -1,7 +1,6 @@
 package santa.mk.jp.solvesudoku;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -264,7 +263,7 @@ public class MyActivity extends Activity {
                 }
 
                 mSelectedCell = mValueMap.getCell(row, column);
-                mSelectedCell.getTextView().setBackgroundColor(Color.BLACK);
+                mSelectedCell.getTextView().setBackgroundColor(getResources().getColor(R.color.selected_cell));
             }
         });
     }
